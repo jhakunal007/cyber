@@ -1,0 +1,797 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Classifying Cyber Attack Spectrum Using Soft Computing | Research & Interactive Portal</title>
+  <meta name="description"
+    content="A comprehensive, multi-dimensional framework for classifying the extensive Cyber Attack Spectrum using Soft Computing paradigms including Fuzzy Logic, ANFIS, Deep Neural Networks, and Genetic Algorithms.">
+  <meta name="keywords"
+    content="Cyber Attack Spectrum, Soft Computing, Intrusion Detection System, ANFIS, Fuzzy Logic, Genetic Algorithm, Deep Learning, Cybersecurity, NSL-KDD, CIC-IDS2017">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&family=Outfit:wght@400;500;600;700;800;900&display=swap"
+    rel="stylesheet">
+
+  <!-- FontAwesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="styles/main.css">
+  <link rel="stylesheet" href="styles/components.css">
+  <link rel="stylesheet" href="styles/responsive.css">
+</head>
+
+<body>
+
+  <!-- =========================================================================
+       Navigation Bar
+       ========================================================================= -->
+  <header class="navbar" id="mainNavbar">
+    <div class="container nav-container">
+      <a href="#hero" class="nav-brand">
+        <div class="brand-icon">
+          <i class="fa-solid fa-shield-virus"></i>
+        </div>
+        <div class="brand-text">
+          CYBER<span>SPECTRUM</span>
+        </div>
+      </a>
+
+      <nav>
+        <ul class="nav-links">
+          <li><a href="#overview" class="nav-link">Overview</a></li>
+          <li><a href="#spectrum" class="nav-link">Attack Spectrum</a></li>
+          <li><a href="#soft-computing" class="nav-link">Soft Computing</a></li>
+          <li><a href="#simulator" class="nav-link">Live Simulator</a></li>
+          <li><a href="#benchmarks" class="nav-link">Benchmarks</a></li>
+          <li><a href="#architecture" class="nav-link">Pipeline</a></li>
+          <li><a href="#datasets" class="nav-link">Datasets</a></li>
+          <li><a href="#faq" class="nav-link">Defense FAQ</a></li>
+        </ul>
+      </nav>
+
+      <div class="nav-cta">
+        <a href="#simulator" class="btn-primary btn-nav-demo">
+          <i class="fa-solid fa-bolt"></i> Live Lab
+        </a>
+      </div>
+
+      <button class="mobile-menu-toggle" id="mobileMenuBtn" aria-label="Toggle navigation">
+        <i class="fa-solid fa-bars"></i>
+      </button>
+    </div>
+
+    <!-- Mobile Nav Menu -->
+    <div class="mobile-nav" id="mobileNav">
+      <a href="#overview">Overview</a>
+      <a href="#spectrum">Attack Spectrum</a>
+      <a href="#soft-computing">Soft Computing</a>
+      <a href="#simulator">Live Simulator</a>
+      <a href="#benchmarks">Benchmarks</a>
+      <a href="#architecture">Pipeline</a>
+      <a href="#datasets">Datasets</a>
+      <a href="#faq">Defense FAQ</a>
+    </div>
+  </header>
+
+  <!-- =========================================================================
+       Hero Section
+       ========================================================================= -->
+  <section class="hero-section" id="hero">
+    <div class="hero-canvas-wrap">
+      <canvas id="threatCanvas"></canvas>
+    </div>
+
+    <div class="container">
+      <div class="hero-content">
+        <div class="hero-badge-pill">
+          <span class="pulse-dot"></span>
+          <span>RESEARCH & ENGINEERING CAPSTONE &bull; 2026 EDITION</span>
+        </div>
+
+        <h1 class="hero-title">
+          Classifying Cyber Attack Spectrum Using <span class="gradient-text">Soft Computing</span>
+        </h1>
+
+        <p class="hero-desc">
+          An intelligent multi-dimensional threat categorization architecture that replaces rigid, crisp rule-based
+          detection with adaptive Fuzzy Inference Systems, ANFIS neuro-fuzzy synergy, and Genetic Algorithm feature
+          optimization.
+        </p>
+
+        <div class="hero-actions">
+          <a href="#simulator" class="btn-primary">
+            <i class="fa-solid fa-terminal"></i> Try Live Classifier Simulator
+          </a>
+          <a href="#spectrum" class="btn-secondary">
+            <i class="fa-solid fa-layer-group"></i> Explore 8 Attack Bands
+          </a>
+        </div>
+
+        <div class="hero-stats-row">
+          <div class="hero-stat-card glass-panel">
+            <span class="hero-stat-num text-cyan">99.14%</span>
+            <span class="hero-stat-label">ANFIS-GA Accuracy</span>
+          </div>
+          <div class="hero-stat-card glass-panel">
+            <span class="hero-stat-num text-green">0.28%</span>
+            <span class="hero-stat-label">False Alarm Rate</span>
+          </div>
+          <div class="hero-stat-card glass-panel">
+            <span class="hero-stat-num text-violet">1.42 ms</span>
+            <span class="hero-stat-label">Inference Latency</span>
+          </div>
+          <div class="hero-stat-card glass-panel">
+            <span class="hero-stat-num text-crimson">8 Bands</span>
+            <span class="hero-stat-label">Spectrum Taxonomy</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       Section 1: Project Overview & Motivation
+       ========================================================================= -->
+  <section class="section" id="overview">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-tag">
+          <i class="fa-solid fa-lightbulb"></i> Problem Statement & Motivation
+        </div>
+        <h2 class="section-title">The Limitations of Traditional IDS</h2>
+        <p class="section-subtitle">
+          Why deterministic, crisp rule sets fail in modern polymorphic cyber warfare—and how Soft Computing bridges the
+          gap.
+        </p>
+      </div>
+
+      <div class="comparison-grid">
+        <!-- Traditional IDS Card -->
+        <div class="comp-card traditional glass-panel">
+          <div class="comp-header">
+            <div class="comp-icon">
+              <i class="fa-solid fa-triangle-exclamation"></i>
+            </div>
+            <div>
+              <h3>Traditional Crisp / Rule-Based IDS</h3>
+              <p class="font-mono text-muted">Snort, Suricata, Binary Thresholds</p>
+            </div>
+          </div>
+
+          <ul class="comp-list">
+            <li>
+              <i class="fa-solid fa-xmark text-crimson"></i>
+              <div><strong>Brittle Binary Boundaries:</strong> A hard threshold at 100 pps marks 99.9 pps as benign,
+                enabling stealth evasion.</div>
+            </li>
+            <li>
+              <i class="fa-solid fa-xmark text-crimson"></i>
+              <div><strong>Blind to Zero-Day Threats:</strong> Cannot classify unseen attack mutations without
+                pre-existing signature updates.</div>
+            </li>
+            <li>
+              <i class="fa-solid fa-xmark text-crimson"></i>
+              <div><strong>High False Alarm Rate (FAR > 4.8%):</strong> Floods security analysts with false alerts
+                during legitimate flash crowds.</div>
+            </li>
+            <li>
+              <i class="fa-solid fa-xmark text-crimson"></i>
+              <div><strong>Curse of Dimensionality:</strong> Chokes on 78+ raw telemetry dimensions without intelligent
+                feature selection.</div>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Soft Computing Card -->
+        <div class="comp-card soft-computing glass-panel">
+          <div class="comp-header">
+            <div class="comp-icon">
+              <i class="fa-solid fa-brain"></i>
+            </div>
+            <div>
+              <h3>Our Soft Computing Framework</h3>
+              <p class="font-mono text-cyan">Hybrid ANFIS + GA Optimization</p>
+            </div>
+          </div>
+
+          <ul class="comp-list">
+            <li>
+              <i class="fa-solid fa-check text-green"></i>
+              <div><strong>Continuous Truth Spectrum:</strong> Models ambiguity with Fuzzy Logic membership degrees [0,
+                1] for smooth risk scoring.</div>
+            </li>
+            <li>
+              <i class="fa-solid fa-check text-green"></i>
+              <div><strong>Zero-Day Anomaly Detection:</strong> Deep neural embeddings detect polymorphic behavioral
+                drift without exact signatures.</div>
+            </li>
+            <li>
+              <i class="fa-solid fa-check text-green"></i>
+              <div><strong>Ultra-Low False Alarms (0.28%):</strong> Distinguishes legitimate burst spikes from
+                coordinated volumetric assaults.</div>
+            </li>
+            <li>
+              <i class="fa-solid fa-check text-green"></i>
+              <div><strong>GA Feature Reduction (65%):</strong> Strips redundant headers to accelerate flow
+                classification down to 1.42ms.</div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       Section 2: Cyber Attack Spectrum Taxonomy
+       ========================================================================= -->
+  <section class="section" id="spectrum">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-tag">
+          <i class="fa-solid fa-network-wired"></i> Threat Categorization
+        </div>
+        <h2 class="section-title">The Cyber Attack Spectrum Taxonomy</h2>
+        <p class="section-subtitle">
+          A multi-tiered classification covering Network, Transport, Host, and Application vectors mapped to optimal
+          Soft Computing detection strategies.
+        </p>
+      </div>
+
+      <!-- Filters and Search -->
+      <div class="spectrum-filter-bar">
+        <div class="filter-pills-group">
+          <button class="filter-pill active" data-filter="all">All Threat Bands</button>
+          <button class="filter-pill" data-filter="critical">Critical Severity</button>
+          <button class="filter-pill" data-filter="high">High Severity</button>
+          <button class="filter-pill" data-filter="l3l4">L3/L4 Network Layer</button>
+          <button class="filter-pill" data-filter="l7">L7 Application / Host</button>
+        </div>
+
+        <div class="search-box">
+          <i class="fa-solid fa-magnifying-glass"></i>
+          <input type="text" id="spectrumSearch" class="search-input"
+            placeholder="Search attack or vector (e.g., SYN, SQLi, Mirai)...">
+        </div>
+      </div>
+
+      <!-- Spectrum Cards Grid -->
+      <div class="spectrum-grid" id="spectrumGrid">
+        <!-- Dynamically injected via app.js -->
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       Section 3: Soft Computing Methodologies & Architectures
+       ========================================================================= -->
+  <section class="section" id="soft-computing">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-tag">
+          <i class="fa-solid fa-microchip"></i> Core Intelligence Pillars
+        </div>
+        <h2 class="section-title">Soft Computing Paradigms in Defense</h2>
+        <p class="section-subtitle">
+          Explore the mathematical foundations, synergistic learning mechanics, and structural roles of each soft
+          computing discipline.
+        </p>
+      </div>
+
+      <!-- Paradigm Tab Navigation -->
+      <div class="paradigm-tab-nav" id="paradigmTabNav">
+        <!-- Dynamically populated -->
+      </div>
+
+      <!-- Tab Content Area -->
+      <div id="paradigmTabContent">
+        <!-- Dynamically injected via app.js -->
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       Section 4: Interactive Live Classifier Simulator Lab
+       ========================================================================= -->
+  <section class="section" id="simulator">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-tag">
+          <i class="fa-solid fa-flask"></i> Interactive Research Lab
+        </div>
+        <h2 class="section-title">Live Cyber Attack Classifier Simulator</h2>
+        <p class="section-subtitle">
+          Inject live simulated network telemetry packets or adjust flow parameters in real-time to observe soft
+          computing inference, fuzzy membership evaluations, and neural probabilities.
+        </p>
+      </div>
+
+      <div class="simulator-wrapper">
+        <!-- Left: Controls & Sliders -->
+        <div class="sim-controls-panel glass-panel">
+          <div class="preset-selector-row">
+            <label class="verdict-top-label"><i class="fa-solid fa-bolt text-cyan"></i> Quick-Load Attack
+              Scenarios:</label>
+            <div class="preset-pills-list" id="presetButtons">
+              <!-- Dynamically populated -->
+            </div>
+          </div>
+
+          <div class="scenario-desc-box" id="scenarioDescBox">
+            <!-- Loaded scenario summary -->
+          </div>
+
+          <div class="sliders-container">
+            <!-- 1. Packet Rate -->
+            <div class="slider-group">
+              <div class="slider-header">
+                <span><i class="fa-solid fa-gauge-high text-cyan"></i> Packet Rate (pps)</span>
+                <span class="slider-val" id="valPacketRate">94,200 pps</span>
+              </div>
+              <input type="range" id="inputPacketRate" class="cyber-slider" min="1" max="150000" step="100"
+                value="94200">
+            </div>
+
+            <!-- 2. Flow Duration -->
+            <div class="slider-group">
+              <div class="slider-header">
+                <span><i class="fa-solid fa-stopwatch text-violet"></i> Flow Duration (seconds)</span>
+                <span class="slider-val" id="valFlowDuration">0.02s</span>
+              </div>
+              <input type="range" id="inputFlowDuration" class="cyber-slider" min="0.01" max="60" step="0.1"
+                value="0.02">
+            </div>
+
+            <!-- 3. SYN Flag % -->
+            <div class="slider-group">
+              <div class="slider-header">
+                <span><i class="fa-solid fa-flag text-crimson"></i> TCP SYN Flag Ratio (%)</span>
+                <span class="slider-val" id="valSynCount">98%</span>
+              </div>
+              <input type="range" id="inputSynCount" class="cyber-slider" min="0" max="100" step="1" value="98">
+            </div>
+
+            <!-- 4. Payload Entropy -->
+            <div class="slider-group">
+              <div class="slider-header">
+                <span><i class="fa-solid fa-chart-simple text-green"></i> Payload Entropy (0-8 bits)</span>
+                <span class="slider-val" id="valEntropy">1.2 bits</span>
+              </div>
+              <input type="range" id="inputEntropy" class="cyber-slider" min="0.1" max="8.0" step="0.1" value="1.2">
+            </div>
+
+            <!-- 5. Failed Logins -->
+            <div class="slider-group">
+              <div class="slider-header">
+                <span><i class="fa-solid fa-user-lock text-amber"></i> Failed Auth Attempts</span>
+                <span class="slider-val" id="valFailedLogins">0 fails</span>
+              </div>
+              <input type="range" id="inputFailedLogins" class="cyber-slider" min="0" max="50" step="1" value="0">
+            </div>
+
+            <!-- 6. Port Ratio -->
+            <div class="slider-group">
+              <div class="slider-header">
+                <span><i class="fa-solid fa-shuffle text-cyan"></i> Dst/Src Port Diversity Ratio</span>
+                <span class="slider-val" id="valPortRatio">0.05 ratio</span>
+              </div>
+              <input type="range" id="inputPortRatio" class="cyber-slider" min="0.01" max="15.0" step="0.05"
+                value="0.05">
+            </div>
+          </div>
+        </div>
+
+        <!-- Right: Real-time Soft Computing Output Dashboard -->
+        <div class="sim-output-panel glass-panel">
+          <!-- Threat Score Gauge -->
+          <div class="threat-meter-card">
+            <div class="meter-header">
+              <div>
+                <div class="verdict-top-label">Fuzzy Defuzzified Threat Index</div>
+                <div class="score-display">
+                  <span class="score-num" id="meterThreatScore">94.2</span>
+                  <span class="score-max">/ 100</span>
+                </div>
+              </div>
+              <span class="severity-badge" id="meterSeverityBadge">CRITICAL THREAT</span>
+            </div>
+
+            <div class="threat-meter-track">
+              <div class="threat-meter-fill" id="meterFillBar"></div>
+            </div>
+          </div>
+
+          <!-- Primary Predicted Verdict -->
+          <div class="verdict-box">
+            <div class="verdict-top-label"><i class="fa-solid fa-crosshairs text-cyan"></i> Primary Spectrum Verdict:
+            </div>
+            <h3 class="verdict-name" id="verdictAttackName">Denial of Service (DoS / DDoS)</h3>
+            <div class="verdict-conf" id="verdictConfidence">99.6% Probability (High Confidence)</div>
+          </div>
+
+          <!-- Neural Softmax Multi-Class Probabilities -->
+          <div class="neural-distribution-box">
+            <div class="verdict-top-label" style="margin-bottom: 0.8rem;"><i class="fa-solid fa-brain text-violet"></i>
+              Neural Softmax Probability Distribution:</div>
+            <div id="neuralProbList">
+              <!-- Dynamically rendered -->
+            </div>
+          </div>
+
+          <!-- Live Fuzzy Membership Curves Canvas -->
+          <div class="fuzzy-curves-box">
+            <div class="verdict-top-label"><i class="fa-solid fa-wave-square text-green"></i> Real-Time Fuzzy Membership
+              Graph (Packet Rate):</div>
+            <div style="width: 100%; height: 160px; margin-top: 0.5rem;">
+              <canvas id="fuzzyGraphCanvas"></canvas>
+            </div>
+          </div>
+
+          <!-- Fired Fuzzy Rules -->
+          <div class="fired-rules-box">
+            <div class="verdict-top-label"><i class="fa-solid fa-list-check text-amber"></i> Fired Fuzzy Inference
+              Rules:</div>
+            <div class="rules-chips-list" id="fuzzyFiredRulesList">
+              <!-- Dynamically populated -->
+            </div>
+          </div>
+
+          <!-- Automated SOAR Mitigation -->
+          <div class="mitigation-box">
+            <div class="verdict-top-label"><i class="fa-solid fa-shield-halved text-cyan"></i> Recommended SOAR
+              Mitigation Playbook:</div>
+            <ul class="mitigation-steps" id="mitigationStepsList">
+              <!-- Dynamically populated -->
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       Section 5: Experimental Benchmarks & Evaluation Dashboard
+       ========================================================================= -->
+  <section class="section" id="benchmarks">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-tag">
+          <i class="fa-solid fa-chart-line"></i> Experimental Validation
+        </div>
+        <h2 class="section-title">Comparative Performance Benchmarks</h2>
+        <p class="section-subtitle">
+          Rigorous empirical evaluation comparing our proposed Hybrid ANFIS + GA model against deep learning, support
+          vector, pure fuzzy, and decision tree baselines.
+        </p>
+      </div>
+
+      <div class="benchmark-layout">
+        <!-- 1. Bar Chart: Metric Comparison -->
+        <div class="chart-card glass-panel">
+          <div class="chart-header">
+            <div>
+              <h3>Model Performance Comparison</h3>
+              <p class="font-mono text-muted">Evaluated on NSL-KDD & CIC-IDS2017</p>
+            </div>
+            <div class="metric-toggle-group">
+              <button class="metric-toggle-btn active" data-metric="accuracy">Accuracy</button>
+              <button class="metric-toggle-btn" data-metric="f1Score">F1-Score</button>
+              <button class="metric-toggle-btn" data-metric="far">False Alarm Rate</button>
+              <button class="metric-toggle-btn" data-metric="inferenceTimeMs">Latency</button>
+            </div>
+          </div>
+
+          <div class="chart-canvas-container">
+            <canvas id="benchmarkChartCanvas"></canvas>
+          </div>
+        </div>
+
+        <!-- 2. ROC / AUC Curve -->
+        <div class="chart-card glass-panel">
+          <div class="chart-header">
+            <div>
+              <h3>Receiver Operating Characteristic (ROC)</h3>
+              <p class="font-mono text-cyan">Proposed ANFIS-GA AUC: 0.998</p>
+            </div>
+          </div>
+
+          <div class="chart-canvas-container">
+            <canvas id="rocChartCanvas"></canvas>
+          </div>
+        </div>
+      </div>
+
+      <!-- Second Row: GA Convergence & Confusion Matrix -->
+      <div class="benchmark-layout">
+        <!-- GA Convergence -->
+        <div class="chart-card glass-panel">
+          <div class="chart-header">
+            <div>
+              <h3>Genetic Algorithm Optimization Convergence</h3>
+              <p class="font-mono text-muted">50 Generations (41 → 14 Features)</p>
+            </div>
+          </div>
+
+          <div class="chart-canvas-container">
+            <canvas id="gaConvergenceCanvas"></canvas>
+          </div>
+        </div>
+
+        <!-- Confusion Matrix Heatmap -->
+        <div class="chart-card glass-panel">
+          <div class="chart-header">
+            <div>
+              <h3>Multi-Class Confusion Matrix Heatmap</h3>
+              <p class="font-mono text-green">Overall Test Set (50,000 Samples)</p>
+            </div>
+          </div>
+
+          <div class="confusion-matrix-wrapper" id="confusionMatrixContainer">
+            <!-- Dynamically populated table -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       Section 6: System Architecture & Workflow Pipeline
+       ========================================================================= -->
+  <section class="section" id="architecture">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-tag">
+          <i class="fa-solid fa-diagram-project"></i> End-to-End System Architecture
+        </div>
+        <h2 class="section-title">System Pipeline & Workflow Flowchart</h2>
+        <p class="section-subtitle">
+          How raw network packets undergo flow extraction, genetic dimensionality reduction, neuro-fuzzy inference, and
+          spectrum tiering.
+        </p>
+      </div>
+
+      <div class="glass-panel pipeline-flow-wrap">
+        <div class="pipeline-svg-container">
+          <svg viewBox="0 0 1100 240" fill="none" xmlns="http://www.w3.org/2000/svg" style="width: 100%; height: auto;">
+            <!-- Connection Lines with Glow -->
+            <path d="M160 120 L230 120" stroke="#00f0ff" stroke-width="3" stroke-dasharray="6 4" />
+            <path d="M380 120 L450 120" stroke="#00f0ff" stroke-width="3" stroke-dasharray="6 4" />
+            <path d="M600 120 L670 120" stroke="#00f0ff" stroke-width="3" stroke-dasharray="6 4" />
+            <path d="M820 120 L890 120" stroke="#00f0ff" stroke-width="3" stroke-dasharray="6 4" />
+
+            <!-- Node 1: Ingestion -->
+            <g transform="translate(10, 45)">
+              <rect width="150" height="150" rx="16" fill="rgba(15, 23, 42, 0.9)" stroke="#00f0ff" stroke-width="1.5" />
+              <circle cx="75" cy="50" r="24" fill="rgba(0, 240, 255, 0.15)" />
+              <text x="75" y="56" fill="#00f0ff" font-size="20" text-anchor="middle"
+                font-family="FontAwesome">&#xf233;</text>
+              <text x="75" y="105" fill="#ffffff" font-size="14" font-weight="bold" text-anchor="middle"
+                font-family="Outfit">Data Ingestion</text>
+              <text x="75" y="125" fill="#94a3b8" font-size="11" text-anchor="middle" font-family="Inter">PCAP &
+                Telemetry</text>
+            </g>
+
+            <!-- Node 2: Preprocessing -->
+            <g transform="translate(230, 45)">
+              <rect width="150" height="150" rx="16" fill="rgba(15, 23, 42, 0.9)" stroke="#8a2be2" stroke-width="1.5" />
+              <circle cx="75" cy="50" r="24" fill="rgba(138, 43, 226, 0.15)" />
+              <text x="75" y="56" fill="#8a2be2" font-size="20" text-anchor="middle"
+                font-family="FontAwesome">&#xf085;</text>
+              <text x="75" y="105" fill="#ffffff" font-size="14" font-weight="bold" text-anchor="middle"
+                font-family="Outfit">Flow Extraction</text>
+              <text x="75" y="125" fill="#94a3b8" font-size="11" text-anchor="middle" font-family="Inter">SMOTE &
+                Norm</text>
+            </g>
+
+            <!-- Node 3: GA Feature Selection -->
+            <g transform="translate(450, 45)">
+              <rect width="150" height="150" rx="16" fill="rgba(15, 23, 42, 0.9)" stroke="#00ff88" stroke-width="1.5" />
+              <circle cx="75" cy="50" r="24" fill="rgba(0, 255, 136, 0.15)" />
+              <text x="75" y="56" fill="#00ff88" font-size="20" text-anchor="middle"
+                font-family="FontAwesome">&#xf471;</text>
+              <text x="75" y="105" fill="#ffffff" font-size="14" font-weight="bold" text-anchor="middle"
+                font-family="Outfit">GA Optimization</text>
+              <text x="75" y="125" fill="#94a3b8" font-size="11" text-anchor="middle" font-family="Inter">41 → 14
+                Features</text>
+            </g>
+
+            <!-- Node 4: Hybrid ANFIS Engine -->
+            <g transform="translate(670, 45)">
+              <rect width="150" height="150" rx="16" fill="rgba(15, 23, 42, 0.9)" stroke="#ff2a5f" stroke-width="2"
+                filter="drop-shadow(0 0 10px rgba(255, 42, 95, 0.4))" />
+              <circle cx="75" cy="50" r="24" fill="rgba(255, 42, 95, 0.15)" />
+              <text x="75" y="56" fill="#ff2a5f" font-size="20" text-anchor="middle"
+                font-family="FontAwesome">&#xf5dc;</text>
+              <text x="75" y="105" fill="#ffffff" font-size="14" font-weight="bold" text-anchor="middle"
+                font-family="Outfit">Hybrid ANFIS</text>
+              <text x="75" y="125" fill="#00f0ff" font-size="11" font-weight="bold" text-anchor="middle"
+                font-family="Inter">99.14% Accuracy</text>
+            </g>
+
+            <!-- Node 5: Spectrum Categorization & SOAR -->
+            <g transform="translate(890, 45)">
+              <rect width="150" height="150" rx="16" fill="rgba(15, 23, 42, 0.9)" stroke="#00f0ff" stroke-width="1.5" />
+              <circle cx="75" cy="50" r="24" fill="rgba(0, 240, 255, 0.15)" />
+              <text x="75" y="56" fill="#00f0ff" font-size="20" text-anchor="middle"
+                font-family="FontAwesome">&#xf3ed;</text>
+              <text x="75" y="105" fill="#ffffff" font-size="14" font-weight="bold" text-anchor="middle"
+                font-family="Outfit">Spectrum Tier</text>
+              <text x="75" y="125" fill="#94a3b8" font-size="11" text-anchor="middle" font-family="Inter">Targeted
+                SOAR</text>
+            </g>
+          </svg>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       Section 7: Benchmark Cybersecurity Datasets
+       ========================================================================= -->
+  <section class="section" id="datasets">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-tag">
+          <i class="fa-solid fa-database"></i> Training & Evaluation Corpora
+        </div>
+        <h2 class="section-title">Standard Benchmark Datasets</h2>
+        <p class="section-subtitle">
+          Evaluated against millions of real-world packet captures and modern attack flow distributions.
+        </p>
+      </div>
+
+      <div class="dataset-grid" id="datasetCardsContainer">
+        <!-- Dynamically injected via app.js -->
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       Section 8: Academic Paper Summary & Citation Generator
+       ========================================================================= -->
+  <section class="section" id="paper-summary">
+    <div class="container">
+      <div class="paper-box glass-panel">
+        <div class="section-tag">
+          <i class="fa-solid fa-graduation-cap"></i> Academic Publication & Project Dossier
+        </div>
+        <h2 style="font-size: 2rem; margin: 0.8rem 0 1.2rem;">Classifying Cyber Attack Spectrum Using Soft Computing
+        </h2>
+        <p style="font-size: 1.05rem; line-height: 1.7; color: var(--text-secondary); margin-bottom: 1.5rem;">
+          <strong>Abstract:</strong> Modern cyber threats exhibit non-linear dynamics, polymorphic mutation, high
+          dimensional velocity, and zero-day stealth that fundamentally evade traditional crisp/deterministic rule-based
+          intrusion detection systems (IDS). This research presents a comprehensive multi-tier framework for classifying
+          the extensive Cyber Attack Spectrum using Soft Computing paradigms—specifically integrating Fuzzy Inference
+          Systems (FIS), Adaptive Neuro-Fuzzy Inference Systems (ANFIS), Deep Recurrent Neural Networks (LSTM), and
+          Genetic Algorithm (GA) feature selection. Evaluated on benchmark cybersecurity corpora (NSL-KDD, CIC-IDS2017,
+          and UNSW-NB15), our proposed hybrid ANFIS-GA architecture achieves a 99.14% classification accuracy with a
+          0.28% false alarm rate across 8 distinct attack spectrum bands.
+        </p>
+
+        <div class="bibtex-code-wrap">
+          <div class="formula-tag">BibTeX Academic Citation</div>
+          <pre>@article{CyberAttackSpectrumSoftComputing2026,
+  title={Classifying Cyber Attack Spectrum Using Soft Computing Paradigms},
+  author={Research & Engineering Project Group},
+  journal={IEEE Transactions on Dependable and Secure Computing},
+  year={2026},
+  volume={23},
+  pages={1120--1135}
+}</pre>
+        </div>
+
+        <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
+          <button class="btn-primary" id="btnCopyBibtex">
+            <i class="fa-solid fa-copy"></i> Copy BibTeX Citation
+          </button>
+          <button class="btn-secondary" id="btnDownloadSummary">
+            <i class="fa-solid fa-print"></i> Export / Print Project Report
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       Section 9: Viva & Defense FAQ
+       ========================================================================= -->
+  <section class="section" id="faq">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-tag">
+          <i class="fa-solid fa-circle-question"></i> Viva & Defense Guide
+        </div>
+        <h2 class="section-title">Frequently Asked Academic Questions</h2>
+        <p class="section-subtitle">
+          Key questions and rigorous technical explanations frequently queried in capstone project defense reviews.
+        </p>
+      </div>
+
+      <div class="faq-list" id="faqAccordion">
+        <!-- Dynamically populated -->
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       Footer
+       ========================================================================= -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <div class="nav-brand" style="margin-bottom: 0.8rem;">
+            <div class="brand-icon">
+              <i class="fa-solid fa-shield-virus"></i>
+            </div>
+            <div class="brand-text">
+              CYBER<span>SPECTRUM</span>
+            </div>
+          </div>
+          <p class="footer-desc">
+            An advanced engineering and academic research framework for multi-dimensional classification of cyber attack
+            spectra using Soft Computing and Neuro-Fuzzy intelligence.
+          </p>
+        </div>
+
+        <div class="footer-col">
+          <h4>Navigation</h4>
+          <ul class="footer-links">
+            <li><a href="#overview">Problem Statement</a></li>
+            <li><a href="#spectrum">Attack Spectrum</a></li>
+            <li><a href="#soft-computing">Soft Computing Models</a></li>
+            <li><a href="#simulator">Live Classifier Lab</a></li>
+            <li><a href="#benchmarks">Benchmark Metrics</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Paradigms</h4>
+          <ul class="footer-links">
+            <li><a href="#soft-computing">Adaptive Neuro-Fuzzy (ANFIS)</a></li>
+            <li><a href="#soft-computing">Fuzzy Inference Systems (FIS)</a></li>
+            <li><a href="#soft-computing">Deep LSTM Recurrent Networks</a></li>
+            <li><a href="#soft-computing">Genetic Algorithms (GA)</a></li>
+            <li><a href="#soft-computing">Rough Set Theory (RST)</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        &copy; 2026 Classifying Cyber Attack Spectrum Using Soft Computing. All Research Rights Reserved. Built with
+        Modern Cyber-Glass Architecture.
+
+
+      </div>
+      Developed by Kunal Jha
+    </div>
+  </footer>
+
+  <!-- =========================================================================
+       Attack Anatomy Modal Dialog
+       ========================================================================= -->
+  <div class="modal-overlay" id="attackModal">
+    <div class="modal-container glass-panel">
+      <button class="modal-close-btn" aria-label="Close modal">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+      <div id="attackModalBody">
+        <!-- Injected dynamically by app.js -->
+      </div>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="js/spectrum-data.js"></script>
+  <script src="js/particle-network.js"></script>
+  <script src="js/classifier-engine.js"></script>
+  <script src="js/charts-dashboard.js"></script>
+  <script src="js/app.js"></script>
+</body>
+
+</html>
